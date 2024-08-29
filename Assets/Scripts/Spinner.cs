@@ -12,6 +12,10 @@ public class Spinner : MonoBehaviour
     {
         // Get the Rigidbody component attached to the wall
         rb = GetComponent<Rigidbody>();
+        if(rb == null)
+        {
+            rb = GetComponentInChildren<Rigidbody>();
+        }
     }
 
     void FixedUpdate()
