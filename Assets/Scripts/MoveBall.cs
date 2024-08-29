@@ -12,10 +12,11 @@ public class MoveBall : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //This limits rotation in postive z
         if(Input.GetKey("w"))
@@ -30,12 +31,12 @@ public class MoveBall : MonoBehaviour
     
         if(Input.GetKey("d"))
         {
-            rb.AddForce(movementSpeed,0,0);
+            rb.AddForce(movementSpeed, 0,0);
         }
         //This limits rotation in negative x
         if(Input.GetKey("a"))
         {
-            rb.AddForce(-movementSpeed,0,0);
+            rb.AddForce(-movementSpeed, 0,0);
         }
     }
 }
