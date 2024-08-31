@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 524464390177334142}
   - component: {fileID: 7559846290261324538}
   - component: {fileID: 1315650808194905877}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SpeedMonitor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
