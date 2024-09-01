@@ -8,6 +8,7 @@ TagManager:
   - box
   - NoPortal
   - YesPortal
+  - Wall
   layers:
   - Default
   - TransparentFX

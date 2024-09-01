@@ -10,10 +10,29 @@ public class Destruction : MonoBehaviour
     // Reference to the second object (the one that should appear)
     public GameObject objectToAppear;
 
+    public AudioClip shatterSound;
+    private AudioSource audioSource;
+    private Collider wallCollider;
+    private MeshRenderer wallRenderer;
+    private bool wallBroke;
+    private void Start()
+    {
+        // Get the AudioSource component from the object
+        audioSource = GetComponent<AudioSource>();
+        wallCollider = objectToDisappear.GetComponent<Collider>();
+        wallRenderer = objectToDisappear.GetComponent<MeshRenderer>();
+        wallBroke=false;
+    }
+
     public void HandleDestruction()
     {
-
-        objectToDisappear.SetActive(false);
+        wallCollider.enabled = false;
+        wallRenderer.enabled = false;
+        if(!wallBroke)
+        {
+            audioSource.PlayOneShot(shatterSound);
+        }
+        wallBroke=true;
         objectToAppear.SetActive(true);
     }
 

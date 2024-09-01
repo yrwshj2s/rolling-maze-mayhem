@@ -13,6 +13,15 @@ public class PortalHandler : MonoBehaviour
     private GameObject orangePortal;
     private GameObject bluePortal;
 
+    public AudioClip portalPlacementSound;
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        // Get the AudioSource component from the object
+        audioSource = GetComponent<AudioSource>();
+    }
+
     // This method will be called by the portal that the player enters
     public void ActivatePortal(Transform enteredPortal)
     {
@@ -62,12 +71,14 @@ public class PortalHandler : MonoBehaviour
         // Left-click to place the orange portal
         if (Input.GetMouseButtonDown(1))
         {
+            Debug.Log("attempting to place portal");
             PlacePortal(ref orangePortal, orangePortalPrefab, ref orangePortalTransform);
         }
 
         // Right-click to place the blue portal
         if (Input.GetMouseButtonDown(0))
         {
+            Debug.Log("attempting to place portal");
             PlacePortal(ref bluePortal, bluePortalPrefab, ref bluePortalTransform);
         }
     }
@@ -80,7 +91,6 @@ public class PortalHandler : MonoBehaviour
         // Check if the ray hits a surface that is allowed to have portals
         if (Physics.Raycast(ray, out hit))
         {
-            Debug.Log("What we hit? "+ hit.transform.tag);
             if(!hit.transform.CompareTag("YesPortal"))
                 return;
             Vector3 portalPosition = hit.point;
@@ -99,8 +109,11 @@ public class PortalHandler : MonoBehaviour
             {
                 // Instantiate the portal at the hit point and orient it to face away from the surface
                 portal = Instantiate(portalPrefab, portalPosition, portalRotation);
+                
             }
             portalTransform = portal.transform;
+            audioSource.PlayOneShot(portalPlacementSound);
+            
         }
     }
 }

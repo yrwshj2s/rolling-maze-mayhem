@@ -9,10 +9,21 @@ public class BallFallHandler : MonoBehaviour
     public Transform respawnPoint; // Assign a respawn point in the Inspector
     public float fallDepth = -2f; // Depth to which the ball will fall
 
+    public AudioClip fallSound; // AudioClip for the fall sound effect
+    private AudioSource audioSource;
+    private BallSoundEffects ballSoundEffects;
+
+    private void Start() {
+        ballSoundEffects = playerBall.GetComponent<BallSoundEffects>();
+        audioSource = playerBall.GetComponent<AudioSource>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player") && !hasFallen)
         {
+            ballSoundEffects.StopRollingSound();
+            audioSource.PlayOneShot(fallSound);
             // Trigger the fall animation
             StartCoroutine(FallIntoHole());
 
