@@ -784,7 +784,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7132917042616910580, guid: 3c8e7d97d493a13459292d0dce2aefbf, type: 3}
       propertyPath: rotationSpeed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1149,6 +1149,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4901227920269151423, guid: d4f529f24cc4b9c46b29daa5fe78fadf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1715670672}
     - target: {fileID: 5295730668624613308, guid: d4f529f24cc4b9c46b29daa5fe78fadf, type: 3}
       propertyPath: m_Name
       value: Board
@@ -1156,33 +1160,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5295730668624613308, guid: d4f529f24cc4b9c46b29daa5fe78fadf, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 860381912}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4f529f24cc4b9c46b29daa5fe78fadf, type: 3}
---- !u!1 &860381911 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5295730668624613308, guid: d4f529f24cc4b9c46b29daa5fe78fadf, type: 3}
-  m_PrefabInstance: {fileID: 860381910}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &860381912
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 860381911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdb180f0d8b0463499d56b979bbc1ada, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  orangePortalTransform: {fileID: 0}
-  bluePortalTransform: {fileID: 0}
-  player: {fileID: 1715670672}
-  orangePortalPrefab: {fileID: 2921331268071736981, guid: 9363f84d8a62ee24eaf3bc809c98d84f, type: 3}
-  bluePortalPrefab: {fileID: 6829118917559440619, guid: d4da4589e00c7ae4ab15b8fb4f8e5644, type: 3}
 --- !u!1001 &1009655264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1436,7 +1415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7132917042616910580, guid: 3c8e7d97d493a13459292d0dce2aefbf, type: 3}
       propertyPath: rotationSpeed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1909,7 +1888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7132917042616910580, guid: 3c8e7d97d493a13459292d0dce2aefbf, type: 3}
       propertyPath: rotationSpeed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1970,7 +1949,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7132917042616910580, guid: 3c8e7d97d493a13459292d0dce2aefbf, type: 3}
       propertyPath: rotationSpeed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

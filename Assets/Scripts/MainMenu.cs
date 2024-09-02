@@ -8,7 +8,6 @@ public class MainMenu : MonoBehaviour
     // Function to load the gameplay scene
     public void PlayGame()
     {
-        Debug.Log("fast");
         SceneManager.LoadScene("LevelSelect"); // Replace with the actual scene name
     }
 

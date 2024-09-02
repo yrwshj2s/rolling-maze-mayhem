@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public MusicManager musicManager;
-
     public void EndLevel()
     {
         // Load the next scene by Build Index
@@ -14,11 +12,7 @@ public class LevelManager : MonoBehaviour
         int nextSceneIndex = currentSceneIndex + 1;
 
         // Check if the next scene index is within the valid range
-        if (musicManager!=null && nextSceneIndex < SceneManager.sceneCountInBuildSettings)
-        {
-            musicManager.FadeOutAndSwitchScene(nextSceneIndex);
-        }
-        else if(nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(nextSceneIndex);
         }
@@ -30,13 +24,13 @@ public class LevelManager : MonoBehaviour
 
     public void LevelLoad(int levelNo)
     {
-        if(musicManager != null)
-        {
-            musicManager.FadeOutAndSwitchScene(levelNo);
-        }
-        else 
+        if(levelNo < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(levelNo);
+        }
+        else
+        {
+            Debug.LogWarning("Invalid level number.");
         }
     }
 }
