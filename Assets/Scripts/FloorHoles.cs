@@ -51,13 +51,10 @@ public class BallFallHandler : MonoBehaviour
         // Ensure the ball reaches the final position
         playerBall.position = endPosition;
 
-        // Optionally, you can respawn the ball after it falls
         yield return new WaitForSeconds(0.5f); // Delay before respawning
         playerBall.GetComponent<Rigidbody>().velocity = Vector3.zero;
         playerBall.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
         playerBall.position = respawnPoint.position;
-
-        // Reset the fall state (optional, if you want the ball to be able to fall again later)
         hasFallen = false;
     }
 }

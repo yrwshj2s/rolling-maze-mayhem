@@ -68,17 +68,13 @@ public class PortalHandler : MonoBehaviour
 
     void HandlePortalPlacement()
     {
-        // Left-click to place the orange portal
         if (Input.GetMouseButtonDown(1))
         {
-            Debug.Log("attempting to place portal");
             PlacePortal(ref orangePortal, orangePortalPrefab, ref orangePortalTransform);
         }
 
-        // Right-click to place the blue portal
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("attempting to place portal");
             PlacePortal(ref bluePortal, bluePortalPrefab, ref bluePortalTransform);
         }
     }

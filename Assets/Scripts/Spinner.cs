@@ -10,7 +10,6 @@ public class Spinner : MonoBehaviour
 
     void Start()
     {
-        // Get the Rigidbody component attached to the wall
         rb = GetComponent<Rigidbody>();
         if(rb == null)
         {
@@ -20,7 +19,6 @@ public class Spinner : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Apply torque around the y-axis (upwards), which will rotate the wall
         rb.angularVelocity = Vector3.up * rotationSpeed;
     }
 }
